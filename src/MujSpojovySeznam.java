@@ -1,4 +1,6 @@
-public class MujSpojovySeznam {
+import java.util.Iterator;
+
+public class MujSpojovySeznam implements Iterable<Integer>{
 
     private Node head;
     private Node tail;
@@ -31,7 +33,7 @@ public class MujSpojovySeznam {
         }
     }
 
-    public int getIndex(int index) throws Exception {
+    public int getIndex(int index){
         int cislo = 0;
         Node curr = head;
         for (int i = 0; i < index+1; i++) {
@@ -39,7 +41,7 @@ public class MujSpojovySeznam {
                 cislo = curr.value;
                 curr = curr.next;
             }else{
-                throw new Exception("Nelze najit cislo mimo rozsah seznamu!!");
+                System.out.println("Nelze najit index");
             }
         }
         return cislo;
@@ -112,6 +114,11 @@ public class MujSpojovySeznam {
 
     public int size() {
         return size;
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return null;
     }
 
     private class Node {
