@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 public class Main {
     public static void main(String[] args) {
         try {
@@ -11,6 +9,12 @@ public class Main {
             seznam.addToEnd(5);
             seznam.addFirst(1);
             seznam.addFirst(2);
+
+            LinkedListIterator list = (LinkedListIterator) seznam.iterator();
+
+            while (list.hasNext()) {
+                System.out.println(list.next());
+            }
 
             //System.out.println(seznam.deleteLast());
             //System.out.println(seznam.getIndex(4));
