@@ -112,13 +112,9 @@ public class MujSpojovySeznam implements Iterable<Integer>{
         return text;
     }
 
-    public int size() {
-        return size;
-    }
-
     @Override
     public Iterator<Integer> iterator() {
-        return null;
+        return new LinkedListIterator(this);
     }
 
     private class Node {
